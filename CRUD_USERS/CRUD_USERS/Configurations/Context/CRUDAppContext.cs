@@ -10,7 +10,10 @@ namespace CRUD_USERS.Configurations.Context
 {
 	public class CRUDAppContext : DbContext
 	{
-        public CRUDAppContext() : base("MyDBConnectionString") { }
+        public CRUDAppContext() : base("MyDBConnectionString") 
+		{
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<CRUDAppContext, Migrations.Configuration>("MyDBConnectionString"));
+		}
 
         public DbSet<User> Users { get; set; }
 
