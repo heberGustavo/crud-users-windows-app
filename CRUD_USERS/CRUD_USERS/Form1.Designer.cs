@@ -41,6 +41,7 @@
 			this.btnSave = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -80,7 +81,6 @@
 			this.lblName.Size = new System.Drawing.Size(35, 13);
 			this.lblName.TabIndex = 4;
 			this.lblName.Text = "Name";
-			this.lblName.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// lblLastName
 			// 
@@ -99,7 +99,6 @@
 			this.label3.Size = new System.Drawing.Size(26, 13);
 			this.label3.TabIndex = 6;
 			this.label3.Text = "Age";
-			this.label3.Click += new System.EventHandler(this.label3_Click);
 			// 
 			// label4
 			// 
@@ -155,11 +154,22 @@
 			this.dataGridViewUsers.TabIndex = 13;
 			this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(231, 26);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(443, 25);
+			this.label1.TabIndex = 14;
+			this.label1.Text = "CRUD USERS WITH ENTITY FRAMEWORK";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(808, 601);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataGridViewUsers);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnSave);
@@ -197,6 +207,7 @@
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.DataGridView dataGridViewUsers;
+		private System.Windows.Forms.Label label1;
 	}
 }
 
