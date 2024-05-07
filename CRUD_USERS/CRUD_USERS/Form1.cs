@@ -51,7 +51,18 @@ namespace CRUD_USERS
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
+			using (var MyModelEntities = new CRUDAppContext())
+			{
+				var resultUser = MyModelEntities.Users.FirstOrDefault(x => x.Id == _idUserCurrent);
+				if(resultUser != null)
+				{
+					MyModelEntities.Users.Remove(resultUser);
+					MyModelEntities.SaveChanges();
+				}
+			}
 
+			PopulateGridViewUser();
+			ClearFields();
 		}
 
 		private void dataGridViewUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -67,6 +78,7 @@ namespace CRUD_USERS
 				var address = linha.Cells[4].Value.ToString();
 				var birthday = DateTime.Parse(linha.Cells[5].Value.ToString());
 
+				ChangeTextButtonSave("Update");
 				PopulateDataInScreen(id, firstName, lastName, age, address, birthday);
 			}
 		}
@@ -130,6 +142,12 @@ namespace CRUD_USERS
 			txtAge.Text = string.Empty;
 			txtAddress.Text = string.Empty;
 			dtBirthday.Text = string.Empty;
+			ChangeTextButtonSave("Save");
+		}
+
+		private void ChangeTextButtonSave(string text)
+		{
+			btnSave.Text = text;
 		}
 
 		#endregion
