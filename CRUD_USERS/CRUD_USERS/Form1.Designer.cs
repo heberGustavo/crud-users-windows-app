@@ -135,6 +135,7 @@
 			this.btnSave.TabIndex = 10;
 			this.btnSave.Text = "Save";
 			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// btnUpdate
 			// 
@@ -144,6 +145,7 @@
 			this.btnUpdate.TabIndex = 11;
 			this.btnUpdate.Text = "Update";
 			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// btnDelete
 			// 
@@ -153,6 +155,7 @@
 			this.btnDelete.TabIndex = 12;
 			this.btnDelete.Text = "Delete";
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// dataGridViewUsers
 			// 
@@ -161,6 +164,7 @@
 			this.dataGridViewUsers.Name = "dataGridViewUsers";
 			this.dataGridViewUsers.Size = new System.Drawing.Size(476, 289);
 			this.dataGridViewUsers.TabIndex = 13;
+			this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
 			// 
 			// Form1
 			// 
