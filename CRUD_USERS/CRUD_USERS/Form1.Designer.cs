@@ -39,7 +39,6 @@
 			this.dtBirthday = new System.Windows.Forms.DateTimePicker();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnSave = new System.Windows.Forms.Button();
-			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
@@ -137,19 +136,9 @@
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Location = new System.Drawing.Point(475, 100);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-			this.btnUpdate.TabIndex = 11;
-			this.btnUpdate.Text = "Update";
-			this.btnUpdate.UseVisualStyleBackColor = true;
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-			// 
 			// btnDelete
 			// 
-			this.btnDelete.Location = new System.Drawing.Point(475, 129);
+			this.btnDelete.Location = new System.Drawing.Point(475, 100);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(75, 23);
 			this.btnDelete.TabIndex = 12;
@@ -173,7 +162,6 @@
 			this.ClientSize = new System.Drawing.Size(658, 637);
 			this.Controls.Add(this.dataGridViewUsers);
 			this.Controls.Add(this.btnDelete);
-			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.dtBirthday);
@@ -207,7 +195,6 @@
 		private System.Windows.Forms.DateTimePicker dtBirthday;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button btnSave;
-		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.DataGridView dataGridViewUsers;
 	}

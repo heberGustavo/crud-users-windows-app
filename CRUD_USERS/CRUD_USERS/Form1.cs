@@ -40,25 +40,12 @@ namespace CRUD_USERS
 		{
 			var userModel = ModelToSave();
 
-			using (var MyModelEntities = new CRUDAppContext())
-			{
-				MyModelEntities.Users.Add(userModel);
-				MyModelEntities.SaveChanges();
-			}
+			if (_idUserCurrent <= 0)
+				Insert(userModel);
+			else
+				Update(userModel);
 
-			PopulateGridViewUser();
-		}
-
-		private void btnUpdate_Click(object sender, EventArgs e)
-		{
-			var userModel = ModelToSave();
-
-			using (var MyModelEntities = new CRUDAppContext())
-			{
-				MyModelEntities.Entry(userModel).State = System.Data.Entity.EntityState.Modified;
-				MyModelEntities.SaveChanges();
-			}
-
+			ClearFields();
 			PopulateGridViewUser();
 		}
 
@@ -85,6 +72,25 @@ namespace CRUD_USERS
 		}
 
 		#region Helper Methods
+
+		private void Insert(User user)
+		{
+			using (var MyModelEntities = new CRUDAppContext())
+			{
+				MyModelEntities.Users.Add(user);
+				MyModelEntities.SaveChanges();
+			}
+		}
+
+		private void Update(User user)
+		{
+			user.Id = _idUserCurrent;
+			using (var MyModelEntities = new CRUDAppContext())
+			{
+				MyModelEntities.Entry(user).State = System.Data.Entity.EntityState.Modified;
+				MyModelEntities.SaveChanges();
+			}
+		}
 
 		private User ModelToSave()
 		{
@@ -114,6 +120,16 @@ namespace CRUD_USERS
 			txtAge.Text = age.ToString();
 			txtAddress.Text = address;
 			dtBirthday.Text = birthday.ToString();
+		}
+
+		private void ClearFields()
+		{
+			_idUserCurrent = 0;
+			txtName.Text = string.Empty;
+			txtLastName.Text = string.Empty;
+			txtAge.Text = string.Empty;
+			txtAddress.Text = string.Empty;
+			dtBirthday.Text = string.Empty;
 		}
 
 		#endregion
